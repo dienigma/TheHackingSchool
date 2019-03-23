@@ -14,4 +14,13 @@ const isPrime = (num) => {
 	return true
 }
 
-console.log(isPrime(169));
+
+const primeGenerator = (n) => {
+	for (var i = 0; i < n; i++) {
+		if(isPrime(i)){
+			console.log(i)
+		}
+	}
+}
+
+console.log(primeGenerator(25))
