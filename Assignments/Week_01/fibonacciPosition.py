@@ -1,22 +1,19 @@
 # Function for nth Fibonacci number 
 
-def Fibonacci(n): 
-	# solution = []
-	# solution[0] = 0
-	# solution[1] =1
+def Fibonacci(position): 
+	solution = []
+	solution.append(0)
+	solution.append(1)
+	
+	i = 2 
+	while (i < position):
+		solution.append(solution[i-2] + solution[i-1])
+		i+=1
+	return (solution[position - 1])
+
+print(Fibonacci(4))
 
 
-	if n<0: 
-		print("Incorrect input") 
-	# First Fibonacci number is 0 
-	elif n==0: 
-		return 0
-	# Second Fibonacci number is 1 
-	elif n==1: 
-		return 1
-	else: 
-		return Fibonacci(n-1)+Fibonacci(n-2) 
-
-print(Fibonacci(3))
-
-
+# solution = []
+# solution.append(0)
+# print(solution)
