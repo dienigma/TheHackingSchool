@@ -6,4 +6,4 @@ const power = (number,exp) => {
 	}
 }
 
-console.log(power(2,5));
+console.log(power(2,3));
