@@ -1,5 +1,5 @@
 const convertToBinary = (decimal) => {
-	let result = []
+	
 	if (decimal == 0){
 		return;
 	} else {
