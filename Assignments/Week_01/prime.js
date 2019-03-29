@@ -14,4 +14,4 @@ const isPrime = (num) => {
 	return true
 }
 
-console.log(isPrime(169));
+console.log(isPrime(4));
