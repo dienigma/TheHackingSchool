@@ -16,11 +16,15 @@ const isPrime = (num) => {
 
 
 const primeGenerator = (n) => {
-	for (var i = 0; i < n; i++) {
-		if(isPrime(i)){
-			console.log(i)
+	count = 0 
+	num = 0
+	while(count < n){
+		if(isPrime(num)){
+			console.log(num)
+			count += 1
 		}
+		num +=1
 	}
 }
 
-console.log(primeGenerator(25))
+primeGenerator(26)
