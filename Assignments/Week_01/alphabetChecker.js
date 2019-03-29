@@ -3,5 +3,5 @@ const alphabetChecker = (input) => {
 	return expression.test(input)
 }
 
-console.log(alphabetChecker("a"))
+console.log(alphabetChecker("asad"))
 console.log(alphabetChecker(2))
