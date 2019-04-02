@@ -10,5 +10,4 @@ const fizzBuzz = (n) => {
         }
     }
 }
-
 fizzBuzz(100)
