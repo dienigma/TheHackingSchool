@@ -23,6 +23,32 @@ function Bootcamper (firstName,lastName){
     
 }
 
-var bootCamper = new Bootcamper("Chinmay","Joshi")
+// var bootCamper = new Bootcamper("Chinmay","Joshi")
 
-console.log(bootCamper.sayHi())
+// console.log(bootCamper.sayHi())
+
+
+function Instructor(name,techstack,experience){
+    this.name = name
+    this.techstack = techstack //Array
+    this.experience = experience
+
+    this.getTechStack = function (){
+        console.log(`${this.name}'s techstacks:`)
+        this.techstack.forEach(element => {
+            console.log(element)
+        });
+    }
+
+    this.sayHi = function () {
+        console.log(`Hi! I am ${this.name}`)
+    }
+
+}
+
+var instructor = new Instructor('Prashanth',['MERN','ROR','LAMPP','PYTHONWEB2PY'], 12)
+
+instructor.getTechStack()
+// instructor.sayHi()
+
+// console.log(instructor)
