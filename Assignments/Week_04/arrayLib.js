@@ -1,6 +1,3 @@
-function Array (){
-    let array = Object.create(Array.prototype)
-    this.push = function (){
-        
-    }
+Array.prototype.push = function (element){
+    
 }
