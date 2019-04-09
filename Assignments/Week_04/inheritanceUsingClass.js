@@ -19,8 +19,9 @@ class Character{
 // console.log(dienigma.bio())
 
 class Assassin extends Character{
+    
     constructor(name,level,guild,skills, dps){
-        super()
+        super(name,level,guild)
         this.skills = skills
         this.dps = dps
     }
@@ -39,6 +40,6 @@ class Assassin extends Character{
     }
 }
 
-var dienigma = new Assassin("Chinmay",15,"Crimson Knights",["charge","blink","phantom dagger","juxtapose"],59)
+var dienigma = new Assassin("Chinmay",25,"Crimson Knights",["charge","blink","phantom dagger","juxtapose"],59)
 
 console.log(dienigma.stats())
