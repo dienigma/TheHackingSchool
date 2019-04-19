@@ -200,3 +200,25 @@ undefined
 ```
 
 This is because it will first print the inner `x` which is equal to 1 then it will print `undefined` as there is no outer `x` will be undefined and the third statyment wll print the value of `y` which is 2.
+
+## Question 9 - What will be the output of the following code and why?
+
+```javascript
+var b = 1;
+function outer() {
+  var b = 2;
+  function inner() {
+    b++;
+    var b = 3;
+    console.log(b);
+  }
+  inner();
+}
+outer();
+```
+
+The output will be 3 because when the inner function will be invoked, b has been redeclared and reassigned to 3. Therefore, the output will be 3.
+
+## Question 10 - Write an app implementing BCrypt in Sync And Asysnc way?
+
+Solution in bcrypt-sync and bcrpyt-async.
