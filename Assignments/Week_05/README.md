@@ -161,3 +161,16 @@ This function is an example of factorial by recursion. This is also an IIFE so i
 The output is 10!
 
 `> 3628800`
+
+## Question 7 - What will be the out put of the following function and why?
+
+```javascript
+(function(x) {
+  return (function(y) {
+    console.log(x);
+  })(2);
+})(1);
+```
+
+The output will be `1` because the outer function and inner function are IIFEs, when outer function is invoked with the argument 1 it returns another IIFE with an arguemnt 2. When the inner function runs it prints the argument of the outer function.
+Therefore the output will be `1`.
