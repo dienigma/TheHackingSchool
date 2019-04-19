@@ -111,3 +111,38 @@ array 2: length= 5 last=j,o,n,e,s
 **Explanation -** When you add arr3 to the arr2, you are pushing the entire array as an element in the arr2. So the last element of arr2 will be arr3. Hence, it displays length to be 5 and its last elemtent to be j,o,n,e,s
 
 ## Question 5 - What is a “closure” in JavaScript? Provide an example.
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain.
+
+```javascript
+function outer() {
+  var b = 10;
+  function inner() {
+    var a = 20;
+    console.log(a + b);
+  }
+  return inner;
+}
+```
+
+Here in this case the scope of _a_ is limited to the _inner_ function and the scope of _b_ is limited to the _outer_ function. Still, _inner_ has access to _b_ which is outside it's scope.
+
+Now consider this example
+
+```javascript
+function outer() {
+  var b = 10;
+  function inner() {
+    var a = 20;
+    console.log(a + b);
+  }
+  return inner;
+}
+
+var X = outer();
+var Y = outer();
+```
+
+In the execution of this code, X will return the entire inner function. Now when outer actually executes, the variables inside outer do not exist anymore.
+
+When the function is executed the second time, again another variable b is created.
