@@ -61,3 +61,29 @@ function foo2() {
 ```
 
 This clearly shows that `foo2()` is retunrning undefined. The `return undefined` statement is converted by a simple `return` statement implicitly by JS.
+
+## Question 3 - In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?
+
+```javascript
+(function() {
+  console.log(1);
+  setTimeout(function() {
+    console.log(2);
+  }, 1000);
+  setTimeout(function() {
+    console.log(3);
+  }, 0);
+  console.log(4);
+})();
+```
+
+Here is the output for the code.
+
+```
+1
+4
+3
+2
+```
+
+Why? Becasue this is an example of the asynchronous nature of JS. and the two `setTimeout` functions will be put in the event loop and they will execute after the stack is free. The JS compiler will put the `console.log()`functions on the stack. While this happens, the other `setTimeout` functions will be pushed to the event loop or the callback queue, when the compiler prints the two console.logs, it pops them and then loads the callback queue on to the stack and hence it prints 3 and then 2 because 3 has 0 time out where as 2 has a timeout of 1000 ms.
