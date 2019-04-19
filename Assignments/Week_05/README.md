@@ -30,3 +30,34 @@ console.log(x);
 // Will strictly check if the variable is declared
 // Since it cannot find the let keyword, it throws a referrence error.
 ```
+
+## Question 2 - Consider the following functions, will they both return the same thing or will they return different things? Why or why not?
+
+```
+function foo1() {
+  return {
+    bar: "hello"
+  };
+}
+
+function foo2() {
+  return
+  {
+    bar: "hello";
+  }
+}
+```
+
+The first function will return an object where as the second one will return undefined. This is because of the way it is written. The first function will return the object because return has a curly brace after it which means that the compiler will see it and will consider that the function is returning something(`object`) in this case.
+The second function will return undefined because the obejct code start on the line after return. This is how the code will be for further understanding.
+
+```javascript
+function foo2() {
+  return undefined;
+  {
+    bar: "hello";
+  }
+}
+```
+
+This clearly shows that `foo2()` is retunrning undefined. The `return undefined` statement is converted by a simple `return` statement implicitly by JS.
