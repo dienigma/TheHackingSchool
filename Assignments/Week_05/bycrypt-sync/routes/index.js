@@ -8,4 +8,9 @@ router.get("/", function(req, res, next) {
   res.render("crypter");
 });
 
+router.post("/", (req, res) => {
+  var result = bcrypt.hashSync(req.body.ipstring, salt);
+  res.render("result", { result: result });
+});
+
 module.exports = router;
