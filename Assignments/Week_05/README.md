@@ -146,3 +146,18 @@ var Y = outer();
 In the execution of this code, X will return the entire inner function. Now when outer actually executes, the variables inside outer do not exist anymore.
 
 When the function is executed the second time, again another variable b is created.
+
+## Question 6 - What will the following code output to the console?
+
+```javascript
+console.log(
+  (function f(n) {
+    return n > 1 ? n * f(n - 1) : n;
+  })(10)
+);
+```
+
+This function is an example of factorial by recursion. This is also an IIFE so it will take 10 as an arguement and immediately invoke itself.
+The output is 10!
+
+`> 3628800`
