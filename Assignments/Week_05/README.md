@@ -87,3 +87,25 @@ Here is the output for the code.
 ```
 
 Why? Becasue this is an example of the asynchronous nature of JS. and the two `setTimeout` functions will be put in the event loop and they will execute after the stack is free. The JS compiler will put the `console.log()`functions on the stack. While this happens, the other `setTimeout` functions will be pushed to the event loop or the callback queue, when the compiler prints the two console.logs, it pops them and then loads the callback queue on to the stack and hence it prints 3 and then 2 because 3 has 0 time out where as 2 has a timeout of 1000 ms.
+
+## Question 4 - What will the code below output to the console and why?
+
+```javascript
+var arr1 = "john".split("");
+var arr2 = arr1.reverse();
+var arr3 = "jones".split("");
+arr2.push(arr3);
+console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+```
+
+This will print out the following:
+
+```javascript
+
+array 1: length= 5 last=j,o,n,e,s
+array 2: length= 5 last=j,o,n,e,s
+
+```
+
+**Explanation -** When you add arr3 to the arr2, you are pushing the entire array as an element in the arr2. So the last element of arr2 will be arr3. Hence, it displays length to be 5 and its last elemtent to be j,o,n,e,s
