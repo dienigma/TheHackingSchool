@@ -174,3 +174,29 @@ The output is 10!
 
 The output will be `1` because the outer function and inner function are IIFEs, when outer function is invoked with the argument 1 it returns another IIFE with an arguemnt 2. When the inner function runs it prints the argument of the outer function.
 Therefore the output will be `1`.
+
+## Question 8 -Consider the following code. What will the output be, and why?
+
+```javascript
+(function() {
+  try {
+    throw new Error();
+  } catch (x) {
+    var x = 1,
+      y = 2;
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+})();
+```
+
+The output will be :
+
+```
+1
+undefined
+2
+```
+
+This is because it will first print the inner `x` which is equal to 1 then it will print `undefined` as there is no outer `x` will be undefined and the third statyment wll print the value of `y` which is 2.
